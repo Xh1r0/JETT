@@ -1,101 +1,83 @@
-/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #fff;
-  color: #000;
-}
-
-/* Navbar */
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 12px 40px;
-  background-color: #2f2f2f;
-  color: white;
+  padding: 1rem 0;
+  background-color: #fff;
 }
 
-.logo {
-  font-size: 1rem;
-  font-weight: bold;
-  opacity: 0.7;
-}
-
-.nav-center ul {
+.nav-container {
+  width: 90%;
+  max-width: 1200px;
   display: flex;
-  list-style: none;
-  gap: 40px;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 2rem;
 }
 
-.nav-center ul li a {
+.nav-links a {
   text-decoration: none;
-  color: white;
-  font-size: 0.9rem;
-  transition: color 0.3s;
-}
-
-.nav-center ul li a:hover {
-  color: #00aaff;
+  color: black;
+  font-size: 0.95rem;
+  font-weight: 400;
+  margin: 0 1rem;
 }
 
 .signin-btn {
   background-color: #007bff;
   color: white;
   border: none;
-  padding: 6px 18px;
+  padding: 8px 18px;
   border-radius: 20px;
-  font-size: 0.9rem;
   cursor: pointer;
-  transition: background-color 0.3s;
+  font-weight: 500;
+  transition: 0.3s;
 }
 
 .signin-btn:hover {
-  background-color: #005dc1;
+  background-color: #0056b3;
 }
 
-/* Hero Section */
 .hero {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 250px;
-  margin: 40px 0;
-}
-
-.hero-box {
   width: 90%;
-  height: 230px;
-  background: linear-gradient(to bottom, #6db6ff, #f2f2f2);
+  max-width: 1200px;
+  height: 220px;
+  margin: 1.5rem auto;
+  background: linear-gradient(to bottom, #74a7ff, #ffffff);
   border-radius: 15px;
-  border: 2px solid #007bff;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .headline {
+  font-size: 1.3rem;
   font-style: italic;
-  font-size: 1.2rem;
+  color: #333;
 }
 
-/* About Section */
 .about {
   text-align: center;
-  margin-top: 30px;
+  margin-top: 2.5rem;
+  padding-bottom: 4rem;
 }
 
-.about h3 {
-  font-weight: bold;
-  margin-bottom: 20px;
+.about h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
 }
 
 .about p {
+  font-size: 0.95rem;
   line-height: 1.8;
-  font-weight: 600;
+  font-weight: 500;
+  color: #000;
 }
