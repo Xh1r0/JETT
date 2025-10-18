@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +9,14 @@
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Konkhmer+Sleokchher&display=swap" rel="stylesheet">
 
+  <!-- Style Utama -->
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <!-- Style Modal -->
+  <link rel="stylesheet" href="{% static 'css/modal.css' %}">
 </head>
 <body>
 
+  <!-- ===== Navbar ===== -->
   <header class="navbar">
     <div class="nav-container">
       <div class="logo">
@@ -25,28 +29,30 @@
           <a href="#">Cari Staf</a>
         </div>
         <div class="signin-btn">
-          <button>Sign In</button>
+          <button id="openLoginModal">Sign In</button>
         </div>
       </div>
     </div>
   </header>
 
+  <!-- ===== Hero Section ===== -->
   <section class="hero">
     <h1 class="headline">HEADLINE</h1>
   </section>
 
+  <!-- ===== About Section ===== -->
   <section class="about">
     <h2>Get To Know JETT!</h2>
-    <p>
-      19 JUTA LAPANGAN PEKERJAAN <br>
-    </p>
+    <p>19 JUTA LAPANGAN PEKERJAAN <br></p>
   </section>
 
+  <!-- ===== Hiring Section ===== -->
   <section class="hiring">
     <h3>Sedang Hiring di JETT!</h3>
     <img src="{% static 'img/company-logos.png' %}" alt="Company Logos">
   </section>
 
+  <!-- ===== Footer ===== -->
   <footer class="footer">
     <div class="footer-container">
       <div class="footer-left">
@@ -66,5 +72,59 @@
     </div>
   </footer>
 
+  <!-- ============================= -->
+  <!-- ===== POP-UP LOGIN MODAL ==== -->
+  <!-- ============================= -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <span class="close" data-close="loginModal">&times;</span>
+      <h2>Masuk</h2>
+
+      <form id="loginForm" method="POST" action="{% url 'login_user' %}">
+        {% csrf_token %}
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Kata Sandi" required>
+        <button type="submit">Masuk</button>
+      </form>
+
+      <p> Tidak punya akun? <a href="#" id="openRegisterLink"><em>Daftar di sini.</em></a></p>
+      <div id="loginMessage" class="message-box"></div>
+    </div>
+  </div>
+
+  <!-- =============================== -->
+  <!-- ===== POP-UP REGISTER MODAL ==== -->
+  <!-- =============================== -->
+  <div id="registerModal" class="modal">
+    <div class="modal-content">
+      <span class="close" data-close="registerModal">&times;</span>
+      <h2>Daftar</h2>
+
+      <form id="registerForm" method="POST" action="{% url 'register_user' %}">
+        {% csrf_token %}
+        <input type="text" name="full_name" placeholder="Nama Lengkap" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Kata Sandi" required>
+        <button type="submit">Daftar</button>
+      </form>
+
+      <p> Sudah punya akun? <a href="#" id="openLoginLink"><em>Masuk di sini.</em></a></p>
+      <div id="registerMessage" class="message-box"></div>
+    </div>
+  </div>
+
+  <!-- =============================== -->
+  <!-- ===== MODAL VERIFIKASI EMAIL === -->
+  <!-- =============================== -->
+  <div id="verifyModal" class="modal">
+    <div class="modal-content">
+      <h2>Verifikasi Email</h2>
+      <p>Kami telah mengirimkan tautan verifikasi ke email Anda. Silakan periksa kotak masuk.</p>
+      <button id="closeVerifyModal">Tutup</button>
+    </div>
+  </div>
+
+  <!-- Script Modal -->
+  <script src="{% static 'js/modal.js' %}" defer></script>
 </body>
 </html>
