@@ -4,7 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Landing Page - JETT</title>
+  <title>JETT - Job Portal</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Konkhmer+Sleokchher&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
@@ -14,11 +18,16 @@
       <div class="logo">
         <img src="{% static 'img/logo-navbar.png' %}" alt="JETT Logo">
       </div>
-      <div class="nav-links">
-        <a href="#">Find Jobs</a>
-        <a href="#">Find Staff</a>
+
+      <div class="nav-right">
+        <div class="nav-links">
+          <a href="#">Cari Kerja</a>
+          <a href="#">Cari Staf</a>
+        </div>
+        <div class="signin-btn">
+          <button>Sign In</button>
+        </div>
       </div>
-      <button class="signin-btn">Sign In</button>
     </div>
   </header>
 
@@ -32,5 +41,30 @@
       19 JUTA LAPANGAN PEKERJAAN <br>
     </p>
   </section>
+
+  <section class="hiring">
+    <h3>Sedang Hiring di JETT!</h3>
+    <img src="{% static 'img/company-logos.png' %}" alt="Company Logos">
+  </section>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-left">
+        <img src="{% static 'img/logo-footer.png' %}" alt="JETT Logo">
+        <p>Hubungi kami:</p>
+        <p>Email: cs@jett.id</p>
+        <p>Whatsapp: 080808080808</p>
+        <div class="social-icons">
+          <img src="{% static 'img/fb-icon.png' %}" alt="Facebook">
+          <img src="{% static 'img/ig-icon.png' %}" alt="Instagram">
+        </div>
+      </div>
+      <div class="footer-right">
+        <a href="#">Cari Kerja</a>
+        <a href="#">Cari Staf</a>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
